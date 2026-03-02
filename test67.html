@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang=en>
+  <head>
+   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+   <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
+   <style>
+body {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size:34px;
+  color: white;
+  height: 22px;
+}
+
+h2 {
+  font-weight: 600;
+  color: white;
+  font-size: 26px;
+  height: 40px;
+}
+       .btn {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  background-color: #28a745; 
+  color: white;               
+  border: none;
+  padding: 12px 30px;         
+  border-radius: 5px;         
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s; 
+}
+
+.btn:hover {
+  background-color: #218838; 
+}
+.rs  {
+ font-family: 'Rajdhani', sans-serif;
+ font-weight:  600;
+ color: white;
+ height: 0px;
+ padding: 10px;
+
+ margin: 10px auto;
+ text-align: center;
+}
+   </style>
+   <title>Dreams And Nightmares</title>
+  </head>
+  <body onload="brython()" 
+  style="background-image: url('https://stratbase.app/images/home/maps/vertigo_raw_urk4ly_c_scale,w_2560.jpg'); background-size: cover;">
+   <h1 style="text-align: center;">Unlock Container</h1>
+   <h2 style="text-align: center;">Unlock Dreams & Nightmares Case</h2>
+   <div style="text-align: center;">
+    <button id=roll-case class="btn"> Roll Case</button>  
+   </div>
+   <div id="results-color"  class="rs">  THIS IS  A BOX</div>
+   <div id="results-gun"  class="rs">  THIS IS  A BOX</div>
+   <div id="results-float"  class="rs">  THIS IS  A BOX</div>
+   <div id="results-fn"  class="rs">  THIS IS  A BOX</div>
+
+   <script type="text/python">
+from browser import document
+import random
+
+def roll_case(ev):
+
+    gold = 100
+    red = 99.74
+    pink = 99.1
+    purple = 95.9
+    blue = 79.92
+
+    FN = 0
+    MW = 0.07
+    FT = 0.15
+    WW = 0.37
+    BS = 0.44
+
+    random_float = round(random.uniform(0, 100), 2)
+
+    if random_float >= red and random_float <= gold:
+        document["results-color"].text = "GOLD"
+        ch = random.randint(1, 48)
+
+        if ch == 1:
+            document["results-gun"].text = "Butterfly Gamma Doppler Phase 1"
+        elif ch == 2:
+            document["results-gun"].text = "Butterfly Gamma Doppler Phase 2"
+        elif ch == 3:
+            document["results-gun"].text = "Butterfly Gamma Doppler Phase 3"
+        elif ch == 4:
+            document["results-gun"].text = "Butterfly Gamma Doppler Phase 4"
+        elif ch == 5:
+            document["results-gun"].text = "Falchion Gamma Doppler Emerald"
+        elif ch == 6:
+            document["results-gun"].text = "Falchion Gamma Doppler Phase 1"
+        elif ch == 7:
+            document["results-gun"].text = "Falchion Gamma Doppler Phase 2"
+        elif ch == 8:
+            document["results-gun"].text = "Falchion Gamma Doppler Phase 3"
+        elif ch == 9:
+            document["results-gun"].text = "Falchion Gamma Doppler Phase 4"
+        elif ch == 10:
+            document["results-gun"].text = "Huntsman Gamma Doppler Emerald"
+        elif ch == 11:
+            document["results-gun"].text = "Huntsman Gamma Doppler Phase 1"
+        elif ch == 12:
+            document["results-gun"].text = "Huntsman Gamma Doppler Phase 2"
+        elif ch == 13:
+            document["results-gun"].text = "Huntsman Gamma Doppler Phase 3"
+        elif ch == 14:
+            document["results-gun"].text = "Huntsman Gamma Doppler Phase 4"
+        elif ch == 15:
+            document["results-gun"].text = "Shadow Daggers Gamma Doppler Emerald"
+        elif ch == 16:
+            document["results-gun"].text = "Shadow Daggers Gamma Doppler Phase 1"
+        elif ch == 17:
+            document["results-gun"].text = "Shadow Daggers Gamma Doppler Phase 2"
+        elif ch == 18:
+            document["results-gun"].text = "Shadow Daggers Gamma Doppler Phase 3"
+        elif ch == 19:
+            document["results-gun"].text = "Shadow Daggers Gamma Doppler Phase 4"
+        elif ch == 20:
+            document["results-gun"].text = "Butterfly Freehand"
+        elif ch == 21:
+            document["results-gun"].text = "Huntsman Bright Water"
+        elif ch == 22:
+            document["results-gun"].text = "Huntsman Freehand"
+        elif ch == 23:
+            document["results-gun"].text = "Huntsman Black Laminate"
+        elif ch == 24:
+            document["results-gun"].text = "Shadow Daggers Freehand"
+        elif ch == 25:
+            document["results-gun"].text = "Shadow Daggers Autotronic"
+        elif ch == 26:
+            document["results-gun"].text = "Shadow Daggers Bright Water"
+        elif ch == 27:
+            document["results-gun"].text = "Bowie Black Laminate"
+        elif ch == 28:
+            document["results-gun"].text = "Shadow Daggers Lore"
+        elif ch == 29:
+            document["results-gun"].text = "Bowie Freehand"
+        elif ch == 30:
+            document["results-gun"].text = "Falchion Freehand"
+        elif ch == 31:
+            document["results-gun"].text = "Bowie Autotronic"
+        elif ch == 32:
+            document["results-gun"].text = "Falchion Bright Water"
+        elif ch == 33:
+            document["results-gun"].text = "Falchion Lore"
+        elif ch == 34:
+            document["results-gun"].text = "Falchion Black Laminate"
+        elif ch == 35:
+            document["results-gun"].text = "Shadow Daggers Black Laminate"
+        elif ch == 36:
+            document["results-gun"].text = "Shadow Daggers Gamma Doppler"
+        elif ch == 37:
+            document["results-gun"].text = "Falchion Autotronic"
+        elif ch == 38:
+            document["results-gun"].text = "Huntsman Lore"
+        elif ch == 39:
+            document["results-gun"].text = "Bowie Bright Water"
+        elif ch == 40:
+            document["results-gun"].text = "Huntsman Autotronic"
+        elif ch == 41:
+            document["results-gun"].text = "Bowie Lore"
+        elif ch == 42:
+            document["results-gun"].text = "Butterfly Black Laminate"
+        elif ch == 43:
+            document["results-gun"].text = "Butterfly Autotronic"
+        elif ch == 44:
+            document["results-gun"].text = "Huntsman Gamma Doppler"
+        elif ch == 45:
+            document["results-gun"].text = "Butterfly Lore"
+        elif ch == 46:
+            document["results-gun"].text = "Butterfly Bright Water"
+        elif ch == 47:
+            document["results-gun"].text = "Bowie Gamma Doppler"
+        elif ch == 48:
+            document["results-gun"].text = "Falchion Gamma Doppler"
+
+    elif random_float >= pink and random_float <= red:
+        document["results-color"].text = "RED"
+        ch = random.randint(1, 2)
+        if ch == 1:
+            document["results-gun"].text = "AK-47 Nightwish"
+        else:
+            document["results-gun"].text = "MP9 Starlight Protector"
+
+    elif random_float >= purple and random_float <= pink:
+        document["results-color"].text = "PINK"
+        ch = random.randint(1, 3)
+        if ch == 1:
+            document["results-gun"].text = "Dual Berettas Melondrama"
+        elif ch == 2:
+            document["results-gun"].text = "FAMAS Rapid Eye Movement"
+        elif ch == 3:
+            document["results-gun"].text = "MP7 Abyssal Apparition"
+
+    elif random_float >= blue and random_float <= purple:
+        document["results-color"].text = "PURPLE"
+        ch = random.randint(1, 5)
+        if ch == 1:
+            document["results-gun"].text = "XM1014 Zombie Offensive"
+        elif ch == 2:
+            document["results-gun"].text = "PP-Bizon Space Cat"
+        elif ch == 3:
+            document["results-gun"].text = "G3SG1 Dream Glade"
+        elif ch == 4:
+            document["results-gun"].text = "USP-S Ticket To Hell"
+        elif ch == 5:
+            document["results-gun"].text = "M4A1-S Night Terror"
+
+    elif random_float <= blue:
+        document["results-color"].text = "BLUE"
+        ch = random.randint(1, 7)
+        if ch == 1:
+            document["results-gun"].text = "SCAR-20 Poultrygeist"
+        elif ch == 2:
+            document["results-gun"].text = "MAG-7 Foresight"
+        elif ch == 3:
+            document["results-gun"].text = "Sawed-Off Spirit Board"
+        elif ch == 4:
+            document["results-gun"].text = "P2000 Lifted Spirits"
+        elif ch == 5:
+            document["results-gun"].text = "MAC-10 Ensnared"
+        elif ch == 6:
+            document["results-gun"].text = "MP5-SD Necro Jr."
+        elif ch == 7:
+            document["results-gun"].text = "Five-SeveN Scrawl"
+
+    skin_float = round(random.uniform(0, 1), 2)
+    document["results-fn"].text = skin_float
+
+    if skin_float < MW and skin_float >= FN:
+        document["results-float"].text = "Factory New"
+    elif skin_float < FT and skin_float >= MW:
+        document["results-float"].text = "Minimal Wear"
+    elif skin_float < WW and skin_float >= FT:
+        document["results-float"].text = "Field-Tested"
+    elif skin_float < BS and skin_float >= WW:
+        document["results-float"].text = "Well-Worn"
+    elif skin_float >= BS:
+        document["results-float"].text = "Battle-Scarred"
+
+
+document["roll-case"].bind("click", roll_case)
