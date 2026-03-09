@@ -83,7 +83,6 @@ h2 {
  bottom:70px;
  right:20px;
  background:white;
- color:black;
  padding:15px;
  border-radius:8px;
  width:220px;
@@ -106,11 +105,11 @@ h2 {
    <div id="results-ST"  class="rs"> </div>
    <button class="odds" id=odds-button >Odds</button>
    <div class="odds-box" id="odds-box" style="text-align: center;">
-   Gold<br>
-   Red<br>
-   Pink<br>
-   Purple<br>
-   Blue
+   Gold - 0.26%<br>
+   Red - 0.64<br>
+   Pink - 3.2<br>
+   Purple - 15.98<br>
+   Blue - 79.92
    </div>
 
    <script type="text/python">
@@ -305,7 +304,7 @@ def roll_case():
         elif ch == 7:
             document["results-gun"].text = "Five-SeveN Scrawl"
 
-    skin_float = round(random.uniform(0, 1), 2)
+    skin_float = round(random.uniform(0, 1), 5)
     document["results-fn"].text = skin_float
 
     if skin_float < MW and skin_float >= FN:
