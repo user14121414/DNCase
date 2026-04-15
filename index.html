@@ -133,10 +133,10 @@ bottom: 20px;
     <p id="NumReds">Reds: 0</p>
     <p id="NumPinks">Pinks: 0</p>
     <p id="NumPurples">Purples: 0</p>
-    <p id="NumBlues">Blues: 0</p>
-   </div>
+    <p id="NumBlues">Blues: 0</p>  </div>
    <h1 style="text-align: center;">Unlock Container</h1>
    <h2 style="text-align: center;">Unlock Dreams & Nightmares Case</h2>
+    <div id="Recents"></div>
    <div style="text-align: center;">
     <button id=roll-case class="btn"> Roll Case</button>  
    </div>
@@ -177,10 +177,26 @@ def click_case(ev):
   
     
 def enable_btn():
-    document["roll-case"].disabled = False
+    document["roll-case"].disabled = False 
+     
+def add_to_feed(gun, condition, stattrak):
+    feed = document["Recents"]
 
+    text = f"{gun}  {condition}"
+    if stattrak.strip():
+        text += " ST"
+
+    div = document.createElement("div")
+    div.textContent = text
+
+    feed.prepend(div)
+
+    if len(feed.children) > 5:
+        last = feed.children[-1]
+        last.remove()
 def roll_case():
     global Golds, Reds, Pinks, Purples, Blues
+     
 
     gold = 100
     red = 99.74
@@ -306,7 +322,7 @@ def roll_case():
         document["results-color"].style.color = "red"
         document["results-color"].style.textShadow = "none"
         Reds += 1
-        document["NumReds"].text = f"Reds:{Reds}"
+        document["NumReds"].text = f"Reds: {Reds}"
         ch = random.randint(1, 2)
         if ch == 1:
             document["results-gun"].text = "AK-47 Nightwish"
@@ -386,6 +402,12 @@ def roll_case():
      document["results-ST"].text = "Stat-Trak"
     else:
      document["results-ST"].text = " "
+    
+    add_to_feed(
+      document["results-gun"].text,
+      document["results-float"].text,
+      document["results-ST"].text
+)
     
        
 def toggle_odds(ev):
