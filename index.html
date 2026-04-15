@@ -192,7 +192,7 @@ def click_case(ev):
 def enable_btn():
     document["roll-case"].disabled = False 
      
-def add_to_feed(gun, condition, stattrak):
+def add_to_feed(gun, condition, stattrak, color):
     feed = document["Recents"]
 
     text = f"{gun}  {condition}"
@@ -201,6 +201,7 @@ def add_to_feed(gun, condition, stattrak):
 
     div = document.createElement("div")
     div.textContent = text
+    div.style.color = color
 
     feed.prepend(div)
 
