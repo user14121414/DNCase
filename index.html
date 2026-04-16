@@ -201,7 +201,8 @@ def add_to_feed(gun, condition, stattrak, color):
 
     div = document.createElement("div")
     div.textContent = text
-    div.style.color = color
+    div.style.color = white
+    div.style.textShadow = f"0 0 10px {color}"
 
     feed.prepend(div)
 
